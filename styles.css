@@ -1,0 +1,10 @@
+body{
+    text-align: center;
+    background: #6943FF;
+
+}
+
+.first{
+    background:white;
+    display: flex;
+}
