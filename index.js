@@ -1,33 +1,28 @@
 const btnEl=document.getElementById("btn-el")
-let inputEl = document.getElementById("input-el").value
-let value = Number(inputEl)
+let inputEl = document.getElementById("input-el")
+
 btnEl.addEventListener("click",function(){
-    length()
-    volume()
-    mass()
+
+    let v = inputEl.value
+
+        let meterToFeet = (v*3.2808399).toFixed(3)
+        let feetToMeter = (v/3.2808399).toFixed(3)
+        let lengthEl =document.getElementById("length-el")
+        lengthEl.innerHTML = `<h2> Length(Meter/Feet) </h2>`+
+        `<p> ${v} meters = ${meterToFeet} feet | ${v} feet = ${feetToMeter} meters </p>`
+
+        let LitresToGallons = (v*3.785).toFixed(3)
+        let GallonsToLittres = (v/3.785).toFixed(3)
+        let volumeEl =document.getElementById("volume-el")
+        volumeEl.innerHTML =  `<h2> Volume(Litre/Gallons)</h2>`+
+        `<p> ${v} litres = ${LitresToGallons} gallons | ${v} gallons = ${GallonsToLittres} litres </p>`
+
+        let kgToPound = (v*2.205).toFixed(3)
+        let poundToKg = (v/2.205).toFixed(3)
+        let massEl =document.getElementById("mass-el")
+        massEl.innerHTML =  `<h2>Mass(Kilograms/Pounds) </h2>`+
+        `<p> ${v} kilograms = ${kgToPound} pounds | ${v} pounds = ${poundToKg} kilograms </p>`
 })
 
 
-function length() {
-    let meterToFeet = (value*3.2808399).toFixed(2)
-    let feetToMeter = (value/3.2808399).toFixed(2)
-    let lengthEl =document.getElementById("length-el")
-    lengthEl.innerHTML +=  `<h3> ${value} meters = ${meterToFeet} feet | ${value} feet = ${feetToMeter} meters </h3>`
 
-}
-
-function volume() {
-    let LitresToGallons = (value*3.785).toFixed(2)
-    let GallonsToLittres = (value/3.785).toFixed(2)
-    let volumeEl =document.getElementById("volume-el")
-    volumeEl.innerHTML +=  `<h3> ${value} litres = ${LitresToGallons} gallons | ${value} gallons = ${GallonsToLittres} litres </h3>`
-
-}
-
-function mass() {
-    let kgToPound = (value*2.205).toFixed(2)
-    let poundToKg = (value/2.205).toFixed(2)
-    let massEl =document.getElementById("mass-el")
-    massEl.innerHTML +=  `<h3> ${value} kilograms = ${kgToPound} pounds | ${value} pounds = ${poundToKg} kilograms </h3>`
-
-}
